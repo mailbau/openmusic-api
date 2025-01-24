@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "driver": "pg",
+        "database": "openmusic",
+        "user": "postgres",
+        "password": "ilovejunkfood321",
+        "host": "localhost",
+        "port": 5432
+    }
+}

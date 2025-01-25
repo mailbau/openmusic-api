@@ -2,7 +2,6 @@ const { nanoid } = require('nanoid');
 const { Pool } = require('pg');
 const InvariantError = require('../../exceptions/InvariantError');
 const NotFoundError = require('../../exceptions/NotFoundError');
-const { mapDBAlbumsToModel } = require('../../utils');
 
 class AlbumsService {
     constructor() {
@@ -44,11 +43,12 @@ class AlbumsService {
         };
         const songs = await this._pool.query(querySongs);
 
-        const transformedAlbum = mapDBAlbumsToModel({
-            ...album.rows[0],
+        const transformedAlbum = {
+            id: album.rows[0].id,
+            name: album.rows[0].name,
+            year: album.rows[0].year,
             songs: songs.rows,
-        });
-
+        };
         return transformedAlbum;
     }
 

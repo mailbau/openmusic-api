@@ -7,7 +7,7 @@ class AlbumsService {
     constructor(storageS3Service, cacheService) {
         this._pool = new Pool();
         this._storageS3Service = storageS3Service;
-        this._cacheService = cacheService
+        this._cacheService = cacheService;
     }
 
     async addAlbum({ name, year }) {

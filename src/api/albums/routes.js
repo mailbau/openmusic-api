@@ -40,8 +40,7 @@ const routes = (handler) => [
     {
         method: 'GET',
         path: '/albums/{id}/likes',
-        handler: (request, h) =>
-            handler.getUserAlbumLikesByIdHandler(request, h),
+        handler: (request, h) => handler.getUserAlbumLikesByIdHandler(request, h),
     },
     {
         method: 'POST',
@@ -54,8 +53,7 @@ const routes = (handler) => [
     {
         method: 'DELETE',
         path: '/albums/{id}/likes',
-        handler: (request, h) =>
-            handler.deleteUserAlbumLikesHandler(request, h),
+        handler: (request, h) => handler.deleteUserAlbumLikesHandler(request, h),
         options: {
             auth: 'songsapp_jwt',
         },
